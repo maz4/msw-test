@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import {axe, toHaveNoViolations} from 'jest-axe'
 
-test('renders learn react link', () => {
-  render(<App />);
+expect.extend(toHaveNoViolations)
+
+test('renders learn react link', async () => {
+  const {container} = render(<App />);
+
+  const result = await axe(container);
+  expect(result).toHaveNoViolations();
+
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
