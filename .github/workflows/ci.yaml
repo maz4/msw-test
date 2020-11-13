@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set Node
-        uses: actions/setup-noce@1
+      - name: Set up Node
+        uses: actions/setup-node@1
         with:
-          node-version: 14
+          node-version: '14.x'
       - name: Install deps
         run: npm install
       - name: Run test
