@@ -12,4 +12,6 @@ test('renders learn react link', async () => {
 
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
+
+  screen.getByText(/test me/i)
 });
