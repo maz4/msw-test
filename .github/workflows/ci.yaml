@@ -1,6 +1,6 @@
 name: Test CI
 
-on: [merge]
+on: [push]
 
 jobs: 
   build: 
